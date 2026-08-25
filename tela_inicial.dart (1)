@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+import 'tela_secundaria.dart';
+
+class TelaInicial extends StatelessWidget {
+
+  const TelaInicial({super.key});
+
+  void abrirSegundaTela(BuildContext context){
+
+    Navigator.push(
+      context, 
+      MaterialPageRoute(
+        builder: (context)
+        => const SegundaTela(),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Tela inicial"
+        ),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+          abrirSegundaTela(context);
+        }, 
+        child: const Text(
+          "Abrir segunda tela"
+        )
+      ),
+      ),
+    );
+  }
+}
