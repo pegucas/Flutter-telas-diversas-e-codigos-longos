@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+
+class SegundaTela extends StatelessWidget {
+  const SegundaTela({super.key});
+
+  void voltarTela(BuildContext context) {
+    Navigator.pop(context); 
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Segunda tela"
+        ),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            voltarTela(context);
+          }, 
+          child: const Text(
+            "Voltar"
+          )
+        ),
+      ),
+    );
+  }
+}
